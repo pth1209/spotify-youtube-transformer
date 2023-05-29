@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+.apach{
+  width: 33%;
+  height: 33%;
+}
