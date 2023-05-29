@@ -1,26 +1,27 @@
-
-import Logo from './Logo';
 import './App.css';
+import spotifylogo from './spotifylogo.png';
+import apach from './apach.png';
+let firstLogo=spotifylogo;
+let secondLogo=spotifylogo;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Logo/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+function Logo() {
+    return (
+        <>
+        <div className='row'>
+            <div className='column'>
+        <img src={firstLogo} alt="logo" />
+        </div>
+        <div className='column'>
+        <img src={apach} alt="logo" className='apach' />
+        </div>
+        <div className='column'>
+        <img src={secondLogo} alt="logo" />
+        </div>
+        </div>
 
-export default App;
+        </>
+    );
+  }
+  
+  export default Logo;
+  
