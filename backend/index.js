@@ -3,12 +3,9 @@ const express = require("express");
 const axios = require('axios');
 require('dotenv').config();
 const SpotifyWebApi = require('spotify-web-api-node');
-
 const app = express();
-
 // app.use("/api", router)
 app.use(express.json())
-
 
 // Create an instance of the SpotifyWebApi class
 const spotifyApi = new SpotifyWebApi({
@@ -48,15 +45,17 @@ const getPlaylistSongs = async (playlistLink) => {
       throw error;
     }
   };
-// Call the function with the Spotify playlist link
-getPlaylistSongs('https://open.spotify.com/playlist/0cwXqzMX0Y9EZCUlGJoEPR?si=3b1jn3OZQXKS-bMGsw7oGA&nd=1&utm_medium=organic&_branch_referrer=H4sIAAAAAAAAA72NXQuCMBiFf828y69FUSAhpUIhfRGYNzGn5vJtW24i9uvToL8QnIvDeXg4ldZSLS1LSaFZ2ZtEShMYr62VbETeUu0JWXADudOyBbi1DXjVqCDsIzccMmLzZ1PxHCYJpAem9FBt2iWvd5zY10WQri8QbUVwOCEcKobwBmfOg%2BN9ekx250kWR6qbi8j%2FnhGAjND6L4fInfF8oI5RFkS3TeGJ5k44ox9DWranHQEAAA%3D%3D&product=open&%24full_url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F0cwXqzMX0Y9EZCUlGJoEPR%3Fsi%3D3b1jn3OZQXKS-bMGsw7oGA&feature=organic&_branch_match_id=1181729234519595532')
-    .then((songList)=> {
-        console.log('Playlist Songs:', songList)
-    }).catch((error) =>{
-        console.error(error);
-    })
 
-
+app.post('/api/get-song-from-playlist', (req, res) => {
+  const { playlistUrl } = req.body
+  // console.log(playlistLink)
+  getPlaylistSongs(playlistUrl)
+   .then ((songList) => {
+    res.json(songList)
+   }).catch((error) => {
+    console.log(error)
+   })
+})
 
 app.listen(process.env.PORT, ()=>{
     console.log(`LISTENING ON PORT`);
