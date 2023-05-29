@@ -1,7 +1,6 @@
 const SpotifyWebApi = require('spotify-web-api-node');
 const express = require("express");
 
-
 async function getSongFromPlaylist(req, res) {
     try {
         // Add your code here to get the playlist URL from the request query or request body

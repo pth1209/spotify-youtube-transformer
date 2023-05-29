@@ -10,8 +10,6 @@ const app = express();
 app.use(express.json())
 
 
-
-
 // Create an instance of the SpotifyWebApi class
 const spotifyApi = new SpotifyWebApi({
   // Set your Spotify client ID and client secret here
