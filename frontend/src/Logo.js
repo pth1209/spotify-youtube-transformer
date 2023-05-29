@@ -1,8 +1,19 @@
 import './App.css';
-import spotifylogo from './spotify.png';
+import spotifyLogo from './spotify.png';
 import arrow from './arrow.png';
-let firstLogo=spotifylogo;
-let secondLogo=spotifylogo;
+import youtubeLogo from './youtube.png';
+let firstLogo=spotifyLogo;
+let secondLogo=youtubeLogo;
+
+function YTFirst(){
+    firstLogo=youtubeLogo;
+    secondLogo=spotifyLogo;
+}
+function SpotifyFirst(){
+    firstLogo=spotifyLogo;
+    secondLogo=youtubeLogo;
+}
+
 
 function Logo() {
     return (
@@ -24,4 +35,3 @@ function Logo() {
   }
   
   export default Logo;
-  
