@@ -1,6 +1,6 @@
 import './App.css';
-import spotifylogo from './spotifylogo.png';
-import apach from './apach.png';
+import spotifylogo from './spotify.png';
+import arrow from './arrow.png';
 let firstLogo=spotifylogo;
 let secondLogo=spotifylogo;
 
@@ -12,7 +12,7 @@ function Logo() {
         <img src={firstLogo} alt="logo" />
         </div>
         <div className='column'>
-        <img src={apach} alt="logo" className='apach' />
+        <img src={arrow} alt="logo" className='apach' />
         </div>
         <div className='column'>
         <img src={secondLogo} alt="logo" />
