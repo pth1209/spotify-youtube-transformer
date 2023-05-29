@@ -36,16 +36,19 @@
     transform: rotate(360deg);
   }
 }
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.row {
+.logo-row {
   display: flex;
+  align-items: center;
 }
 
-.column {
-  flex: 33.33%;
-  padding: 5px;
+.logo {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Adjust the margin as needed */
 }
-.apach{
-  width: 33%;
-  height: 33%;
+
+.arrow {
+  width: 20px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 10px; /* Adjust the margin as needed */
 }

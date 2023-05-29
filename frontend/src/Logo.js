@@ -2,36 +2,30 @@ import './App.css';
 import spotifyLogo from './spotify.png';
 import arrow from './arrow.png';
 import youtubeLogo from './youtube.png';
-let firstLogo=spotifyLogo;
-let secondLogo=youtubeLogo;
-
-function YTFirst(){
-    firstLogo=youtubeLogo;
-    secondLogo=spotifyLogo;
-}
-function SpotifyFirst(){
-    firstLogo=spotifyLogo;
-    secondLogo=youtubeLogo;
-}
+import { useState } from 'react';
 
 
-function Logo() {
-    return (
+
+const LogoRow = ({ isSwapped, swapLogos }) => {
+
+
+  return (
+    <div className="logo-row">
+      {isSwapped ? (
         <>
-        <div className='row'>
-            <div className='column'>
-        <img src={firstLogo} alt="logo" />
-        </div>
-        <div className='column'>
-        <img src={arrow} alt="logo" className='apach' />
-        </div>
-        <div className='column'>
-        <img src={secondLogo} alt="logo" />
-        </div>
-        </div>
-
+          <img src={spotifyLogo} alt="Spotify Logo" className="logo" />
+          <img src={arrow} alt="Arrow" className="arrow" />
+          <img src={youtubeLogo} alt="YouTube Logo" className="logo" />
         </>
-    );
-  }
-  
-  export default Logo;
+      ) : (
+        <>
+          <img src={youtubeLogo} alt="YouTube Logo" className="logo" />
+          <img src={arrow} alt="Arrow" className="arrow" />
+          <img src={spotifyLogo} alt="Spotify Logo" className="logo" />
+        </>
+      )} 
+    </div>
+  );
+};
+
+export default LogoRow;
