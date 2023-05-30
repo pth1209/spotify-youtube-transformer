@@ -12,9 +12,9 @@ const LogoRow = ({ isSwapped, swapLogos }) => {
     <div className="logo-row">
           <Link to ="/youtube">
           <img src={youtubeLogo} alt="YouTube Logo" className="ylogo" />
-          </Link>
+          </a>
           <p>OR</p>
-          <Link to ="/spotify">
+          <a href="/spotify">
           <img src={spotifyLogo} alt="Spotify Logo" className="slogo" />
           </Link>
     </div>

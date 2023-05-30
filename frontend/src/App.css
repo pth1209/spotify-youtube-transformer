@@ -54,3 +54,11 @@
   height: auto; /* Maintain the aspect ratio */
   margin-right: 30px; /* Adjust the margin as needed */
 }
+.convert{
+  margin-right: 20px;
+  padding: 20px;
+  text-shadow: 2px 2px #000000;
+}
+.or{
+  text-shadow: 2px 2px #000000;
+}
