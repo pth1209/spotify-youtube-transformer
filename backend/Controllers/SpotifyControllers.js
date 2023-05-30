@@ -61,10 +61,11 @@ const createYoutubePlaylist = async (req, res) => {
         });
       }));
 
+      res.json(data);
 
-
-  }catch{
-    
+  } catch (error) {
+    console.error('Error creating playlist:', error);
+    res.status(500).json({ error: 'Failed to create playlist' });
   }
 
 }
