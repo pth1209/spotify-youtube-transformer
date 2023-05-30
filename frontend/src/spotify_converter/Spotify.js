@@ -1,11 +1,7 @@
 import Logo from '../Logo';
 import './spotify.css';
-import Box from '../Box';
-import SpotyifyFirst from '../Logo';
-import YouTubeFirst from '../Logo';
 import React, {useState} from "react"
 import axios from "axios"
-import swapLogo from '../Logo';
 
 function Spotify() {
   
@@ -13,20 +9,12 @@ function Spotify() {
   
     const handleInputChange = (event) => {
         setPlaylistUrl(event.target.value)
-        if (event.target.value.includes('spotify')) {
-          console.log("spotify")
-          SpotyifyFirst()
-  
-        } else if (event.target.value.includes('youtube')) {
-          console.log("youtube")
-          YouTubeFirst()
-        }
     }
   
     const sendUrlToBackend = async () => {
       console.log(playlistUrl.split('/playlist/')[1])
       try {
-        const response = await axios.post('/api/get-song-from-playlist', {playlistUrl})
+        const response = await axios.post('/api/create-youtube-playlist', {playlistUrl})
         console.log(response.data)
       } catch (error)  {
         console.log(error)

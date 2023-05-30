@@ -10,11 +10,11 @@ const LogoRow = ({ isSwapped, swapLogos }) => {
 
   return (
     <div className="logo-row">
-          <Link to ="/youtube">
+          <Link to = "/youtube">
           <img src={youtubeLogo} alt="YouTube Logo" className="ylogo" />
-          </a>
+          </Link>
           <p>OR</p>
-          <a href="/spotify">
+          <Link to ="/spotify">
           <img src={spotifyLogo} alt="Spotify Logo" className="slogo" />
           </Link>
     </div>
