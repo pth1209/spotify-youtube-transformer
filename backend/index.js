@@ -6,13 +6,13 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
 
-// app.use("/api", router)
+app.use("/api/convert", router)
 app.use(express.json())
 
 
 
 
-// Create an instance of the SpotifyWebApi class
+
 const spotifyApi = new SpotifyWebApi({
   // Set your Spotify client ID and client secret here
   clientId: process.env.SPOTIFY_CLIENT_ID,
