@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(30,215, 96);
+    text-align: center;
+}
+
+.spotify-header {
+    display: flex;
+    justify-content: center;
+  }
+
+.input_button_container {
+    display: flex;
+    align-items: center;
+    margin-top: 320px;
+    flex-direction: column;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    position: relative;
+    background-color: rgba(255,255,255,0.3);
+    transition: 0.3s all;
+}
+
+.button {
+    margin-top: 20px;
+    font-family: 'Circular Std';
+    height: 30px;
+    width: 100px;
+}
+

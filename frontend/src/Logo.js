@@ -1,27 +1,24 @@
 import './App.css';
-import spotifylogo from './spotify.png';
+import spotifyLogo from './spotify_converter/spotify.png';
 import arrow from './arrow.png';
-let firstLogo=spotifylogo;
-let secondLogo=spotifylogo;
+import youtubeLogo from './youtube.png';
+import { useState } from 'react';
+import {Link} from "react-router-dom";
 
-function Logo() {
-    return (
-        <>
-        <div className='row'>
-            <div className='column'>
-        <img src={firstLogo} alt="logo" />
-        </div>
-        <div className='column'>
-        <img src={arrow} alt="logo" className='apach' />
-        </div>
-        <div className='column'>
-        <img src={secondLogo} alt="logo" />
-        </div>
-        </div>
+const LogoRow = ({ isSwapped, swapLogos }) => {
 
-        </>
-    );
-  }
-  
-  export default Logo;
-  
+
+  return (
+    <div className="logo-row">
+          <Link to ="/youtube">
+          <img src={youtubeLogo} alt="YouTube Logo" className="ylogo" />
+          </a>
+          <p>OR</p>
+          <a href="/spotify">
+          <img src={spotifyLogo} alt="Spotify Logo" className="slogo" />
+          </Link>
+    </div>
+  );
+};
+
+export default LogoRow;

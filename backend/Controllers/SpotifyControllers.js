@@ -1,8 +1,12 @@
 const SpotifyWebApi = require('spotify-web-api-node');
 const express = require("express");
 
+<<<<<<< HEAD:backend/Controllers/SpotifyControllers.js
 
 async function getYoutubeFromSpotify(req, res) {
+=======
+async function getSongFromPlaylist(req, res) {
+>>>>>>> 90fa4419519a283549cda06db22125f78d5d11ad:backend/Controllers/controllers.js
     try {
         // Add your code here to get the playlist URL from the request query or request body
         const { id } = req.params
