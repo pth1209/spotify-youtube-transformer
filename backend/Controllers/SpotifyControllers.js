@@ -16,6 +16,7 @@ const createYoutubePlaylist = async (req, res) => {
 
   try{
     const playlistId = playlistUrl.split('/playlist/')[1];
+    console.log(playlistId)
     const { body: { name, tracks } } = await spotifyApi.getPlaylist(playlistId);
 
 
@@ -27,7 +28,6 @@ const createYoutubePlaylist = async (req, res) => {
         artist: track.artists.map((artist) => artist.name).join(', '),
       };
     });
-
     
     const youtube = google.youtube({ version: 'v3', auth: oauth2Client });
     const playlistTitle = `${name} on Spotify`;

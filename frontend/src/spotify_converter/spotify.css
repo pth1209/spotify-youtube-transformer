@@ -1,6 +1,7 @@
-body {
+body .spotify {
     background-color: rgb(30,215, 96);
     text-align: center;
+    height: 100vh;
 }
 
 .spotify-header {
