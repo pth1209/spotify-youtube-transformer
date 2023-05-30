@@ -11,19 +11,13 @@ const LogoRow = ({ isSwapped, swapLogos }) => {
 
   return (
     <div className="logo-row">
-      {isSwapped ? (
-        <>
-          <img src={spotifyLogo} alt="Spotify Logo" className="logo" />
-          <img src={arrow} alt="Arrow" className="arrow" />
-          <img src={youtubeLogo} alt="YouTube Logo" className="logo" />
-        </>
-      ) : (
-        <>
-          <img src={youtubeLogo} alt="YouTube Logo" className="logo" />
-          <img src={arrow} alt="Arrow" className="arrow" />
-          <img src={spotifyLogo} alt="Spotify Logo" className="logo" />
-        </>
-      )} 
+          <a href="/youtube">
+          <img src={youtubeLogo} alt="YouTube Logo" className="ylogo" />
+          </a>
+          <p>OR</p>
+          <a href="/spotify">
+          <img src={spotifyLogo} alt="Spotify Logo" className="slogo" />
+          </a>
     </div>
   );
 };

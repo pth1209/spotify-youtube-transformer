@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState} from "react"
 import axios from "axios"
 
-function YouTube() {
+function Spotify() {
    
         const [playlistUrl, setPlaylistUrl] = useState("")
 
@@ -31,4 +31,4 @@ function YouTube() {
     );
 }
 
-export default YouTube;
+export default Spotify;
