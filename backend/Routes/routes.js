@@ -3,6 +3,6 @@ const router = express.Router();
 const Controller = require("../Controllers/SpotifyControllers.js")
 
 
-router.route('/get-song-from-playlist').post(Controller.getSpotifyPlaylist);
+router.route('/create-youtube-playlist').post(Controller.createYoutubePlaylist);
 
 module.exports = router
