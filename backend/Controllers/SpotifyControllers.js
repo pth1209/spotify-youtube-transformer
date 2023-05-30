@@ -13,7 +13,7 @@ const createYoutubePlaylist = async (req, res) => {
   // NEED TO DOUBLE CHECK THAT THIS GENERATES CORRECT AUTHENTICATION 
   const oauth2Client = new google.auth.OAuth2();
   oauth2Client.setCredentials({ access_token: tokenId });
-  
+
   try{
     const playlistId = playlistUrl.split('/playlist/')[1];
     const { body: { name, tracks } } = await spotifyApi.getPlaylist(playlistId);
