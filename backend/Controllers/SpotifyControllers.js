@@ -51,7 +51,7 @@ const createYoutubePlaylist = async (req, res) => {
           part: 'snippet',
           requestBody: {                    // CODE TO INSERT PLAYLIST FROM THE GOOGLE YOUTUBE API
             snippet: {
-              playlistId,
+              youtubePlaylistId,
               resourceId: {
                 kind: 'youtube#video', 
                 videoId,
