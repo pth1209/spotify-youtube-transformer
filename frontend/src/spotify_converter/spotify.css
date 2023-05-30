@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(30,215, 96);
+    align-items: center;
+    text-align: center;
+}
+
+.spotify-header {
+    display: flex;
+    justify-content: center;
+  }
+
+.input_button_container {
+    display: flex;
+    align-items: center;
+}

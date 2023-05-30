@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Spotify from './Spotify';
+import Spotify from './spotify_converter/Spotify';
 import Youtube from './Youtube';
 
 function Mid() {

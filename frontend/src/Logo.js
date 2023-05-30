@@ -1,5 +1,5 @@
 import './App.css';
-import spotifyLogo from './spotify.png';
+import spotifyLogo from './spotify_converter/spotify.png';
 import arrow from './arrow.png';
 import youtubeLogo from './youtube.png';
 import { useState } from 'react';
