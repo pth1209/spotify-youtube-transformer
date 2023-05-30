@@ -44,33 +44,13 @@
 .slogo {
   width: 150px; /* Adjust the width as needed */
   height: auto; /* Maintain the aspect ratio */
-  margin-left: 0px; /* Adjust the margin as needed */
+  margin-left: 20px; /* Adjust the margin as needed */
 
 }
-
 
 
 .ylogo {
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain the aspect ratio */
   margin-right: 30px; /* Adjust the margin as needed */
-}
-
-.linkContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.spotifyLogo img {
-  width: 200px;
-  height: 200px;
-  margin-right: 100px;
-  margin-left: 50px;
-}
-
-.youtubeLogo img {
-  width: 500px;
-  height: 400px;
-  margin-right: 20px;
 }
