@@ -1,38 +1,57 @@
 const SpotifyWebApi = require('spotify-web-api-node');
-const express = require("express");
 
-<<<<<<< HEAD:backend/Controllers/SpotifyControllers.js
+const spotifyApi = new SpotifyWebApi({
+  // Set your Spotify client ID and client secret here
+  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+});
 
-async function getYoutubeFromSpotify(req, res) {
-=======
-async function getSongFromPlaylist(req, res) {
->>>>>>> 90fa4419519a283549cda06db22125f78d5d11ad:backend/Controllers/controllers.js
+
+
+/**HELPER FUNCTION TO GET PLAYLIST WITH spotifyApi */
+const getPlaylistSongs = async (playlistLink) => {
     try {
-        // Add your code here to get the playlist URL from the request query or request body
-        const { id } = req.params
-
-        const spotifyApi = new SpotifyWebApi({
-          clientId: process.env.SPOTIFY_CLIENT_ID,
-          clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-        });
-
-
-        const { body: { access_token } } = await spotifyApi.clientCredentialsGrant(); // Generate an access token
-        spotifyApi.setAccessToken(access_token);
-
-
-        const { body: { tracks } } = await spotifyApi.getPlaylist(id); // Get the playlist, list of tracks
-    
-        
-        const trackNames = tracks.items.map((item) => item.track.name); // Extract the names from the tracks array
-    
-        res.send(trackNames); // Send the list of track names as the response
-      } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json('An error occurred');
-      }
+      // Extract the playlist ID from the link
+      const playlistId = playlistLink.split('/playlist/')[1];
+  
+      // Retrieve an access token
+      const { body: { access_token } } = await spotifyApi.clientCredentialsGrant();
+  
+      // Set the access token for making authenticated API requests
+      spotifyApi.setAccessToken(access_token);
+  
+      // Get the playlist details, including the list of tracks
+      const { body: { tracks } } = await spotifyApi.getPlaylist(playlistId);
+  
+      // Extract the relevant information from the tracks array
+      const songList = tracks.items.map((item) => {
+        const track = item.track;
+        return {
+          title: track.name,
+          artist: track.artists.map((artist) => artist.name).join(', '),
+          length: track.duration_ms,
+        };
+      });
+  
+      // Return the list of songs
+      return songList;
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
     }
+  };
+
+const getSpotifyPlaylist = (req, res) => {
+  const { playlistUrl } = req.body
+  // console.log(playlistLink)
+  getPlaylistSongs(playlistUrl)
+   .then ((songList) => {
+    res.json(songList)
+   }).catch((error) => {
+    console.log(error)
+   })
+}
 
 module.exports = {
-    getYoutubeFromSpotify,
+    getSpotifyPlaylist,
 }
