@@ -9,10 +9,15 @@ body .spotify {
     justify-content: center;
   }
 
+.google_login {
+    display: flex;
+    align-items: center;
+    margin-top: 300px;
+}
+
 .input_button_container {
     display: flex;
     align-items: center;
-    margin-top: 320px;
     flex-direction: column;
 }
 
