@@ -5,7 +5,7 @@ const router = require("./Routes/routes.js");
 
 app.use(express.json());
 
-app.use('/api', router); // Mount the router at the '/api' base URL path
+app.use('/api/create-youtube-playlist', router); // Mount the router at the '/api' base URL path
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

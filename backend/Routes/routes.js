@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Controller = require("../Controllers/SpotifyControllers.js")
+const {createYoutubePlaylist} = require("../Controllers/SpotifyControllers.js")
 
 
-router.route('/create-youtube-playlist').post(Controller.createYoutubePlaylist);
+router.post('/', createYoutubePlaylist);
 
 module.exports = router
