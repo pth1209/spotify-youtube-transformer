@@ -2,7 +2,8 @@ const { google } = require("googleapis");
 const axios = require('axios');
 
 const createYoutubePlaylist = async (req, res) => {
-  const { tokenId, playlistUrl } = req.body;
+  const tokenId = req.body.accessToken;
+  const playlistUrl = req.body.playlistUrl;
   const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
   const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 

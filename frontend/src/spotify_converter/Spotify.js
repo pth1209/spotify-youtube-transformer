@@ -8,9 +8,12 @@ function Spotify() {
   
     const [playlistUrl, setPlaylistUrl] = useState("")
     const [login, setLogin] = useState(false)
+    const [accessToken, setAccessToken] = useState("")
+
 
     const handleLoginSuccess = (credentialResponse) => {
       console.log(credentialResponse)
+      setAccessToken(credentialResponse)
       setLogin(true)
     }
 
@@ -23,9 +26,8 @@ function Spotify() {
     }
   
     const sendUrlToBackend = async () => {
-      console.log(playlistUrl.split('/playlist/')[1])
       try {
-        const response = await axios.post('/api/create-youtube-playlist', {playlistUrl})
+        const response = await axios.post('/api/create-youtube-playlist', {playlistUrl, accessToken})
         console.log(response.data)
       } catch (error)  {
         console.log(error)
